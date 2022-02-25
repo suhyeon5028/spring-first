@@ -13,4 +13,9 @@ public class PostController {
     public String writeForm() {
         return "writeForm";
     }
+
+    @GetMapping("/updateForm")
+    public String updateForm() {
+        return "updateForm";
+    }
 }

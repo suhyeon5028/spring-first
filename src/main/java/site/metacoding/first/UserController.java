@@ -3,12 +3,17 @@ package site.metacoding.first;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-// Data를 리턴하는 컨드롤러
+// Data를 리턴하는 컨드롤러(PrintWriter로 리턴함)
 @RestController
 public class UserController {
 
-    public UserController() {
+    Dog d;
+
+    // DI 라고함. IoC 컨테이너에 있으니까 주입해 줄 수 있음.
+    // Dependency Injection 의존성 주입
+    public UserController(Dog d) {
         System.out.println("UserController 생성자 실행됨");
+        this.d = d;
     }
 
     @GetMapping("/home")
